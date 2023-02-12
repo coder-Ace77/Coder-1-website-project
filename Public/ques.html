@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 vs 1 | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            1 vs 1
+        </h1>
+        <nav class = 'nav-main'>
+            <span class="nav-item"><a href="/">Home</a></span>
+            <span class="nav-item">Create contest</span>
+            <span class="nav-item"><a href="/practice">Practice</a></span>
+            <span class="nav-item"><a href="sol.html">Solution</a></span>
+            <span class="nav-item">Ranking</span>
+            <span class="link-active">Add Question</span>
+        </nav>
+    </header>
+    <main>
+
+        <div class="addq-box">
+            <form action="/ques" method="post">
+                <textarea name="ques_name" cols="100" rows="2" placeholder="Ques name here" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="ques" cols="100" rows="15" placeholder="Add ques in here" spellcheck="false" style="font-family: sans-serif; background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="input_format" cols="100" rows="7" placeholder="Add Input Format" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="output_format" cols="100" rows="7" placeholder="Add Output Format" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="sample_input" cols="100" rows="5" placeholder="Add Sample Input" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="sample_output" cols="100" rows="5" placeholder="Add Sample Output" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="input_test" cols="100" rows="8" placeholder="Input Test cases" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="output_test" cols="100" rows="8" placeholder="Output Test cases" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <textarea name="difficulty" cols="100" rows="2" placeholder="Difficullty here" spellcheck="false" style="font-family: sans-serif;background-color: rgb(5, 15, 23);"></textarea>
+                <br>
+                <br>
+                <input type="submit" value="Submit" class="button-sub">
+            </form>
+        </div>
+
+    </main>
+    <footer class="footer-box" style="position: absolute; top: 285%;">
+        <span class="footer-item">Email:mohdadil@iitbhilai.ac.in</span><br>
+        <span class="footer-item">Contact:6386695340</span><br>
+        <span class="footer-item">Privacy</span>
+        <span class="footer-item">Contact</span>
+    </footer>
+</body>
+</html>

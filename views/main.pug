@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Main
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="main.css")
+
+    body
+    header 
+        h1 1 vs 1
+        nav 
+            span.link-active Home  
+            span.nav-item Running Contest
+            a.nav-item(href="/practice") Practice
+            span.nav-item Ranking
+            a.nav-item(href="ques.html") Add-Ques
+            a.nav-item(href="/sign") Sign-In
+        
+        main
+            .create-contest
+                img(src="hacker.png", alt="Img here")
+                form(action="\\new_contest" method="post")
+                    
+                    span Enter ID1
+                    input(type="text")
+                    br
+                    br
+
+                    span Enter ID2
+                    input(type="text")
+                    br
+                    br
+
+                    span Enter ques 1
+                    input(type="text")
+                    br
+                    br
+
+
+                    span Enter ques 2
+                    input(type="text") 
+                    br
+                    br
+
+                    span Enter ques 3
+                    input(type="text") 
+                    br
+                    br
+
+                    input(type="submit", value="Submit") 
+
+            .login
+                form(action="/login", method="post")
+                    span Enter ID : 
+                    input(type="text" name="ID")
+                    br
+                    br
+                    span Password : 
+                    input(type="password" name="password")
+                    br
+                    br
+                    input(type="submit", value="Submit")

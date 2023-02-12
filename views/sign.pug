@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="sign.css")
+        title Document
+    body 
+        header
+        h1 1 vs 1
+        nav 
+            a.nav-item(href ="/") Home  
+            span.nav-item Running Contest
+            a.nav-item(href="/practice") Practice
+            span.nav-item Ranking
+            a.nav-item(href="ques.html") Add-Ques
+            a.link-active(href="sign.html") Sign-In
+
+        main 
+            .login
+                .image 
+                    img(src="sign.png")
+                br
+                form(action="/sign_in", method="post")
+                    span Enter ID : 
+                    input(type="text" name="ID")
+                    br
+                    br
+                    span Password : 
+                    input(type="password" name="password")
+                    br
+                    br
+                    if val
+                        .message-green
+                            span #{message}
+                        br
+                    else
+                        .message
+                            span #{message}
+                        br
+                    input(type="submit", value="Submit")

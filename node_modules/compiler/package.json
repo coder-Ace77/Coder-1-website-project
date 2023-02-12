@@ -1,0 +1,20 @@
+{
+  "author": "azrael <azrael@imatlas.com> (http://imatlas.com/about)",
+  "name": "compiler",
+  "description": "a web compile tool",
+  "version": "0.1.2",
+  "homepage": "http://imatlas.com/posts/nodejs-compiler/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iazrael/compiler.git"
+  },
+  "main": "./compiler.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "node-file": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
