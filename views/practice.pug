@@ -14,15 +14,14 @@ html(lang="en")
                 a.nav-item(href="/") Home 
                 span.nav-item Running Contest
                 span.link-active Practice
-                //- a.nav-item(href="sol.html") Solution
                 span.nav-item Ranking
                 a.nav-item(href="ques.html") Add-Ques  
         main.outer-box
             each ques in arr
-                //- var l=str(#{ques[0]})
-                a.ques-item(href=`/${ques.ques_name}` name=l)
-                        img.img-icon(src="hacker.png", alt="Bad connection" width="50px")
-                        .ques-item-inside-l #{ques.ques_name} 
-                        -var diff = '#' + ques.difficulty
-                        .ques-item-inside-r #{diff}
-                br
+                if ques.type == 'public'
+                    a.ques-item(href=`/${ques.ques_name}` name=l)
+                            img.img-icon(src="hacker.png", alt="Bad connection" width="50px")
+                            .ques-item-inside-l #{ques.ques_name} 
+                            -var diff = '#' + ques.difficulty
+                            .ques-item-inside-r #{diff}
+                    br

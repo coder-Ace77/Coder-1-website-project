@@ -27,3 +27,7 @@ img{
     font-size: 14px;
     color: rgb(23, 152, 55);
 }
+.user-name{
+    position: absolute;
+    right: 20px;
+}
