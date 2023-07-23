@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=, initial-scale=1.0")
+        link(rel="stylesheet", href="css\\style.css")
+        title Document
+    body
+        header
+            h1 1 vs 1
+            nav 
+                a.nav-item(href="/") Home 
+                span.link-active My Contest
+                span.nav-item Practice
+                span.nav-item Ranking
+                a.nav-item(href="ques.html") Add-Ques
+                span.nav-item #{user.user}
+        main.outer-box
+            each i in arr
+                    -const second = (i.ID1 == user.user) ? i.ID2 : i.ID1
+                    -const x = user.user + " vs " +  second
+                    -const co_date = new Date(i.time);
+                    -const min = (Date.now() - co_date)/(1000*60);
+                    if(min>=0 && min<=30)
+                        a.ques-item(href=`/contest/${i._id}` name=l)
+                            img.img-icon(src="image\\hacker.png", alt="Bad connection" width="50px")
+                            .ques-item-inside-l #{x}
+                            .ques-item-inside-r #{i.time}
+                    else
+                        .ques-item(href=`/running/${i._id}` name=l)
+                            img.img-icon(src="image\\security.png", alt="Bad connection" width="50px")
+                            .ques-item-inside-l #{x}
+                            .ques-item-inside-r #{i.time}
+                    br

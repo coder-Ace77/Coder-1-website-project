@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=, initial-scale=1.0")
+        link(rel="stylesheet", href="\\css\\style.css")
+
+        title Document
+    body
+        header
+            h1 contest page
+            nav 
+                a.nav-item(href="/") Home 
+                span.link-active My Contest
+                span.nav-item Practice
+                span.nav-item Ranking
+                a.nav-item(href="ques.html") Add-Ques
+
+            main.outer-box
+                -const co_date = new Date(arr.time);
+                -const min = (Date.now() - co_date)/(1000*60);
+                .ques-item
+                form(action=`\\contestques\\#{ques}`, method="post") 
+                    img.img-icon(src="\\image\\hacker.png", alt="Bad connection" width="50px")
+                    .ques-item-inside-l #{arr.q1} 
+                    -var marks = 100
+                    .ques-item-inside-r #{marks}
+                a.ques-item(href=`/${arr.q2}` name=l)
+                    img.img-icon(src="\\image\\hacker.png", alt="Bad connection" width="50px")
+                    .ques-item-inside-l #{arr.q2} 
+                    -var marks = 200
+                    .ques-item-inside-r #{marks}
+                a.ques-item(href=`/${arr.q3}` name=l)
+                    img.img-icon(src="\\image\\hacker.png", alt="Bad connection" width="50px")
+                    .ques-item-inside-l  #{arr.q3} 
+                    -var marks = 200
+                    .ques-item-inside-r #{marks}

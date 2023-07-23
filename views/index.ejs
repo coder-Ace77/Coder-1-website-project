@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <h1>1vs1</h1>
+        <nav>
+            <span class="link-active">Home</span>
+            <a href="/Practice" class="nav-item">Practice</a>
+            <a href="/Contests" class="nav-item">Contests</a>
+            <a href="/challenges" class="nav-item">Challenges</a>
+            <a href="/addQues" class="nav-item">Add Question</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <ul>
+                <li>
+                    <span>User Name:</span>
+                    <span>
+                        <%=user.username%>
+                    </span>
+                </li>
+                <li>
+                    <span>Name:</span>
+                    <span>
+                        <%=user.name%>
+                    </span>
+                </li>
+                <li>
+                    <span>Rating:</span>
+                    <span>
+                        <%=user.rating%>
+                    </span>
+                </li>
+                <li>
+                    <span>Contest Appereared:</span>
+                    <span>
+                        <%=user.contests.length%>
+                    </span>
+                </li>
+                <li>
+                    <span>Questions Solved:</span>
+                    <span>
+                        <%=user.solved_ques.length%>
+                    </span>
+                </li>
+                <li>
+                    <span>Institution:</span>
+                    <span>
+                        <%=user.institution%>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>Contest Appeared</h2>
+            <%if( user.contests.length==0){%>
+                <h3>No contest</h3>
+                <%}%>
+                    <ul>
+                        <%for(let i=0;i< user.contests.length ; i++){%>
+                            <h3>No Contest Appeared</h3>
+                            <li>
+                                <%=user.contests[i]%>
+                            </li>
+                            <%}%>
+                    </ul>
+        </div>
+        <div>
+            <h2>Questions Solved</h2>
+            <ul>
+                <%for(let i=0;i< user.solved_ques.length ; i++){%>
+                    <h3>No Contest Appeared</h3>
+                    <li>
+                        <%=user.solved_ques[i]%>
+                    </li>
+                    <%}%>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>

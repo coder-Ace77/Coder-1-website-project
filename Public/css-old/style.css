@@ -1,0 +1,205 @@
+/* *{
+    /* outline: rgba(40, 164, 40, 0.772) solid 2px;
+} */
+
+textarea{
+    background-color: rgb(7, 23, 46);
+    color: aliceblue;
+    font-size: large;
+    font-family: monospace;
+
+}
+.ide-box{
+    position: absolute;
+    left:54%;
+    top:45%;
+    height: 100%;
+    width:auto;
+    border-width: 28px 0 0 0;
+    border-style: solid;
+    border-color: rgb(20, 69, 182);
+    margin-left: 40px;
+}
+
+body{
+    margin: 0%;
+    text-align: center;
+    font-family: sans-serif;
+    outline:green solid 5px;
+}
+h1{
+    margin: 0%;
+    padding: 5%;
+    font-size:300%;
+    background-color: rgb(154, 123, 22);
+    color:rgb(2, 90, 148);
+}
+nav{
+    text-align: left;
+    padding: 1.5%;
+    background-color: rgb(44, 7, 20);
+    color:aliceblue;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index:1;
+}
+.nav-item{
+    text-align: left;
+    padding: 1.5%;
+    background-color: rgb(44, 7, 20);
+    color:aliceblue;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.nav-item{
+    padding: 1%;
+}
+.nav-item:hover{
+    padding: 1%;
+    color: rgb(45, 99, 147);
+}
+.ques-box{
+    position: absolute;
+    left:20px;
+    top:45%;
+    height:100%;
+    width:50%;
+    text-align: left;
+    padding:2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button-sub{
+    background-color: aquamarine;
+    border: 0;
+    border-radius: 10%;
+    height: 30px;
+    width:70px;
+}
+.button-sub:hover{
+    background-color: rgb(14, 123, 87);
+    border: 0;
+    border-radius: 10%;
+    height: 30px;
+    width:70px;
+}
+.footer-box{
+    position:absolute;
+    top: 170%;
+    height:30%;
+    width:100%;
+    background:black;
+    color:aliceblue;
+}
+.footer-item{
+    padding:10% 2%;
+    position: relative;
+    top: 10%;
+}
+a{
+    font-style: normal;
+    text-decoration: none;
+    color:aliceblue;
+}
+a:hover{
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(45, 99, 147);
+}
+.prac-css{
+    border-color: tomato;
+    border-width: 2px;
+    margin:10px;
+}
+.material-symbols-outlined{
+    margin: 5px;
+    position: absolute;
+    bottom: 10px;
+    right:auto
+}
+.link-active{
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(45, 99, 147);
+}
+a:active{
+    cursor:wait;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(45, 99, 147);
+}
+.status-box{
+    border-style: solid;
+    padding:10px;
+    border-color:black;
+    height:30px;
+    width:52%;
+    position: absolute;
+    top:157%;
+    margin-left: 20px;
+    background-color: rgb(120, 205, 131);
+    text-align: center;
+}
+.addq-box{
+    margin-top: 20px;
+}
+.an-box{
+    width:100%;
+    height:160px;
+    background-color: rgb(65, 130, 187);
+    margin:0;
+}
+.outer-box{
+    width:80%;
+    height:auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    top:46%;
+    margin-left: 10%;
+    padding:20px;
+    margin-bottom: 20px;
+}
+.ques-item{
+    width: 98%;
+    height:80px;
+    background-color: rgba(192, 203, 213, 0.734);
+    color: black;
+    padding:10px;
+    font-size: 20px;
+    text-align: justify;
+    display: block;
+    position: relative;
+}
+.ques-item:hover{
+    width: 98%;
+    height:80px;
+    background-color: rgba(176, 184, 193, 0.734);
+    color: black;
+    padding:10px;
+    text-align: justify;
+    font-size:20px;
+    display: bloack;
+    position: relative;
+}
+.ques-item-inside-l{
+    /* margin-left:40%; */
+    position: absolute;
+    top:40%;
+    left:40%;
+    color: rgb(45, 99, 147);
+    font-size: larger;
+    text-align: center;
+}
+.ques-item-inside-r{
+    margin-left: 85%;
+    position:absolute;
+    top:45%;
+    color: rgb(45, 99, 147);
+}
+.img-icon{
+    height:50px;
+    position:relative;
+    top:10px;
+    left:5%;
+}
