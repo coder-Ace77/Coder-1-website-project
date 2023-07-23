@@ -18,7 +18,7 @@ exports.SignInController = (req, res) => {
         })
         new_user.save();
         req.session.isLoggedIn = true;
-        req.session.user = new_user;
+        req.session.user = req.body;
         req.session.save(err => {
             res.redirect('/');
         });

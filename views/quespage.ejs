@@ -21,7 +21,7 @@
     <main class="cover-box">
         <div class="ques-box">
             <h2>
-                <%= ques_name%>
+                <%=ques_name%>
             </h2>
             <div class="prob-statement">
                 <%=problem_statement%>
@@ -41,10 +41,12 @@
 
 
             <div class="ide-box">
-                <form action="/sub" method="post">
-                    <textarea name="code" id="" cols="57" rows="33">
-                    </textarea>
+                <form action="/submitQues" method="post" enctype="multipart/form-data">
+                    <!-- <textarea name="code" id="" cols="57" rows="33">
+                    </textarea> -->
                     <br><br>
+                    <input type="file" name="codefile">
+                    <input type="text" name="ques_name" hidden value=<%=ques_name%>>
                     <input type="submit" value="Submit" class="button-sub">
                 </form>
             </div>
@@ -54,5 +56,7 @@
         </div>
     </main>
 </body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../scripts/fetcher.js"></script>
 
 </html>
