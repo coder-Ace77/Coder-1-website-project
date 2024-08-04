@@ -6,8 +6,8 @@ const fs = require("fs");
 const path = require("path");
 const exp = require("constants");
 const runners = {}
-runners.cpp = require("./judges/cpp").main;
-runners.python = require("./judges/python").main;
+runners.cpp = require("../judges/cpp").main;
+runners.python = require("../judges/python").main;
 
 const ID = 1000;
 
