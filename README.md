@@ -1,9 +1,9 @@
 # Screenshots
 
-(screenshots/Personal1.png)
-(screenshots/Personal2.png)
-(screenshots/code_editor.png)
-(screenshots/signup.png)
-(screenshots/Submitting.png)
-(screenshots/Submissions.png)
+![Personal1](screenshots/Personal1.png)
+![Personal2](screenshots/Personal2.png)
+![codeEditor](screenshots/code_editor.png)
+![Sign up](screenshots/signup.png)
+![Submitting](screenshots/Submitting.png)
+![Submissions](screenshots/Submissions.png)
 
