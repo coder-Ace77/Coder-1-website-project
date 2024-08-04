@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const cors = require("cors");
 const MongoDBStore = require("connect-mongodb-session")(session);
+require('dotenv').config();
+
+const port = process.env.PORT || 3000;
+const dbUrl = process.env.DATABASE_URL;
 
 const tags = require("./support/tags.js");
 const { loginController, logOutController, checkLoginController } = require("./controllers/login.js");
@@ -104,12 +108,10 @@ app.get("/", (req, res) => {
 
 
 mongoose
-  .connect(
-    "mongodb+srv://Mohd_Adil:Mishrapur@onlineide.5fsk0pr.mongodb.net/ide"
-  )
+  .connect(dbUrl)
   .then(() => {
     console.log("Connected to MongoDB");
-    app.listen(5000, () => {
+    app.listen(port, () => {
       console.log("Server is running on port 5000");
     });
   })
