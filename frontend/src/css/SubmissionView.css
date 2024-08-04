@@ -1,0 +1,45 @@
+.submission-details {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #5e5e5e;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submission-details h1 {
+    text-align: center;
+    color: #ede6e6;
+}
+
+.submission-code {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.submission-status {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #05ed3b;
+}
+
+.submission-status.success {
+    background-color: #159d35;
+    color: #155724;
+}
+
+.submission-status.failure {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.submission-status.tle {
+    background-color: #fff3cd;
+    color: #856404;
+}

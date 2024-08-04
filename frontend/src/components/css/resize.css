@@ -1,0 +1,49 @@
+.ResizableDiv {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.left-div {
+  background-color: lightblue;
+  height: 100%;
+
+}
+
+.vertical-splitter {
+  position: absolute;
+  height: 100%;
+  width: 10px;
+  background-color: rgb(56, 56, 56);
+  cursor: col-resize;
+}
+
+.right-div {
+  position: absolute;
+  right: 0;
+  /* background-color: lightgreen; */
+  width: calc(100% - var(--splitter-pos) - 10px);
+  height: 100%;
+}
+
+.top-div {
+  /* background-color: lightpink; */
+  width: 100%;
+}
+
+.horizontal-splitter {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: rgb(56, 56, 56);
+  cursor: row-resize;
+}
+
+.bottom-div {
+  position: absolute;
+  bottom: 0;
+  /* background-color: lightyellow; */
+  width: 100%;
+  height: calc(100% - var(--splitter-pos) - 10px);
+}

@@ -1,0 +1,57 @@
+.tag-search-component {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tag-dropdown {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.selected-tag {
+    display: flex;
+    align-items: center;
+    background-color: #555;
+    color: #fff;
+    padding: 4px 8px;
+    margin: 4px 4px;
+    border-radius: 4px;
+}
+
+.remove-tag-btn {
+    margin-left: 8px;
+    background-color: transparent;
+    color: #ff4444;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+.add-tag-btn {
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-tag-btn:hover {
+    background-color: #005f75;
+}

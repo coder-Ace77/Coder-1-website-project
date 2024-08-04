@@ -1,0 +1,106 @@
+ .profile-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    /* background-color: #f8f9fa; */
+}
+
+.left-sidebar {
+    width: 30%;
+    padding: 20px;
+    background-color: #393838;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-height: calc(145vh - 100px);
+}
+
+.left-sidebar.expanded {
+    width: 35%;
+}
+
+.left-main {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.personal-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #393838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.details {
+    flex: 1;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-picture-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.rating-graph {
+    padding: 20px;
+    background-color: #393838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.solved-questions {
+    padding: 20px;
+    background-color: #393838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.custom-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.custom-list li {
+    padding: 10px;
+    border-bottom: 1px solid #727374;
+}
+
+.custom-list li.even {
+    background-color: #464748;
+}
+
+.custom-list li.odd {
+    background-color: #8b8787;
+}
+
+.custom-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.custom-link:hover {
+    text-decoration: underline;
+}
+

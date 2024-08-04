@@ -1,0 +1,44 @@
+/* AuthPage.css */
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    margin-top:20px;
+    /* Dark background */
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 320px;
+    margin: 0 20px;
+    padding: 30px;
+    background-color: #2d2d2d;
+    /* Dark card background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.auth-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #aaa;
+}
+
+.auth-footer a {
+    color: #66afe9;
+    /* Link color */
+}

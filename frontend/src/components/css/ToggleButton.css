@@ -1,0 +1,23 @@
+/* ToggleButton.css */
+
+.toggle-button {
+    /* padding: 8px 16px; */
+    cursor: pointer;
+    border-radius: 0%;
+    font-size: 14px;
+}
+
+.toggle-button.grey:hover{
+    background-color: #55595a;
+    color: white;
+}
+
+.toggle-button.grey {
+    background-color: #4d4f4f;
+    color: white;
+    border: none;
+}
+
+/* .toggle-button:not(:last-child) {
+    /* margin-right: 10px; */
+    /* Space between buttons */
