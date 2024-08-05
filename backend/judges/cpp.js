@@ -4,10 +4,6 @@ const path = require("path");
 const exp = require("constants");
 const execPromise = require("util").promisify(cp.exec);
 
-const compileCode = (inputPath, outputPath) => {
-};
-
-
 const check = (output, expectedOutput) => {
     output = output.split("\n");
     expectedOutput = expectedOutput.split("\n");
@@ -95,7 +91,7 @@ const main = async (code, question, id) => {
             passed++;
         } else {
             let message;
-            if (x === "TLE") {
+            if (x === "TLE"){
                 message = `Time Limit Exceeded on test case ${i + 1}`;
             } else {
                 message = `Test case failed`;
@@ -106,7 +102,7 @@ const main = async (code, question, id) => {
             };
         }
         if (passed >= tot_cases) {
-            return { status: true, message: `All ${passed} test cases passed.` }
+            return {status:true, message: `All ${passed} test cases passed.`}
         }
     }
 }

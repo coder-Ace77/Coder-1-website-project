@@ -86,10 +86,7 @@ const RightSection = ({ onSubmissionResponse }) => {
             <div className="section-header">
                 <select value={language} onChange={handleLanguageChange} className="language-select">
                     <option value="cpp">C++</option>
-                    <option value="c">C</option>
                     <option value="python">Python</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="java">Java</option>
                 </select>
                 <div>
                     <CustomButton color="grey">
@@ -102,7 +99,7 @@ const RightSection = ({ onSubmissionResponse }) => {
             </div>
             <div className="monaco-editor">
                 <Editor
-                    language={language === 'c' ? 'cpp' : language} 
+                    language={language} 
                     theme="vs-dark"
                     value={code}
                     onChange={handleEditorChange}
