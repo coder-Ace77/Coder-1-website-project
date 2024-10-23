@@ -98,13 +98,7 @@ app.get("/questionlist", async (req, res) => {
 
 
 app.get("/", (req, res) => {
-  console.log(req.session);
-  console.log(req.session.id);
-  console.log("API is working.");
-  res.send({
-    status: true,
-    msg: "API is working",
-  });
+  
 });
 
 
@@ -113,7 +107,7 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(port, () => {
-      console.log("Server is running on port 5000");
+      console.log(`Server is running on port ${port}`);
     });
   })
   .catch((err) => {

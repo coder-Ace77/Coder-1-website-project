@@ -2,12 +2,9 @@ const {questions} = require("../models/question.js");
 const {user} = require("../models/user.js");
 
 exports.getTaggedDataController=(req, res) => {
-    console.log('Fetching tag data');
-    console.log(req.session);
     if (!req.session.user){
         return res.status(401).send('Unauthorized');
     }
-    console.log(req.session.user);
     user.findById(req.session.user._id).exec().then(result => {
     if (!result) {
         return res.status(404).send('User not found');
@@ -24,7 +21,6 @@ exports.getTaggedDataController=(req, res) => {
             }
             });
         });
-        console.log(tagCounts);
         res.json(tagCounts);
         }).catch(error => {
         console.error('Error fetching tag data:', error);
