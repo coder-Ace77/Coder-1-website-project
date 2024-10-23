@@ -2,6 +2,8 @@ import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'rea
 import axios from 'axios';
 import './css/SubmissionSection.css';
 import { CopyBlock, dracula } from 'react-code-blocks';
+import request from '../control/api';
+
 
 const SubmissionSection = forwardRef(({ ques }, ref) => {
     const [submissions, setSubmissions] = useState([]);
@@ -11,8 +13,7 @@ const SubmissionSection = forwardRef(({ ques }, ref) => {
     const fetchSubmissions = async () => {
         try {
             console.log(ques);
-            const url = `http://localhost:5000/submissions/${ques}`;
-            const response = await axios.get(url, { withCredentials: true });
+            const response = await request.get(`/submissions/${ques}`, { withCredentials: true });
             if (response.data.status) {
                 setSubmissions(response.data.submissions.reverse());
             }

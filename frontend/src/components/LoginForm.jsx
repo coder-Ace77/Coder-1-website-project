@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './css/AuthForm.css';
 import { useNavigate } from 'react-router-dom';
+import request from '../control/api';
+
 
 const LoginForm = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -19,7 +21,7 @@ const LoginForm = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/login', loginData, { withCredentials: true });
+            const response = await request.post('/login', loginData, { withCredentials: true });
             console.log(response.data.code);
             if (response.data.code === 200) {
                 setPopupMessage('Login successful!');

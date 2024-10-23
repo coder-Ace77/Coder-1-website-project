@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-import axios from 'axios';
+import request from "../control/api";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,7 +11,6 @@ import {
   Legend
 } from 'chart.js';
 
-// Register the necessary components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -26,7 +25,7 @@ const TagBarGraph = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/tagdata',{withCredentials: true})
+    request.get('/tagdata',{withCredentials: true})
       .then(response => {
         setTagData(response.data);
         setLoading(false);

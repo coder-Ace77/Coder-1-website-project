@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { CopyBlock , dracula } from 'react-code-blocks';
 import axios from 'axios';
+import request from "../control/api";
 import './css/Editorial.css';
 
 const Editorial = () => {
@@ -9,7 +10,7 @@ const Editorial = () => {
     const [editorial, setEditorial] = useState('');
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/ques/${quesName}/editorial`)
+        request.get(`/ques/${quesName}/editorial`)
             .then(response => {
                 setEditorial(response.data.editorial);
             })

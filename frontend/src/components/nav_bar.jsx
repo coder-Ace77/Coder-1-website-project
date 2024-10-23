@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './css/NavBar.css';
+import request from '../control/api';
+
 
 const NavBar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/checklogin' , {withCredentials: true})
+        request.get('/checklogin' , {withCredentials: true})
             .then(response => {
                 if (response.data.isLoggedIn) {
                     setIsLoggedIn(true);
@@ -20,7 +22,7 @@ const NavBar = () => {
     }, []);
 
     const handleLogout = () => {
-        axios.get('http://localhost:5000/logout',{withCredentials:true}).then(response => {
+        request.get('/logout',{withCredentials:true}).then(response => {
                 if (response.data.code === 200) {
                     setIsLoggedIn(false);
                     setUsername('');

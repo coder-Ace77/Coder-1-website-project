@@ -5,6 +5,8 @@ import axios from 'axios';
 import CustomButton from './CustomButton';
 import './css/RightSection.css';
 import draculaTheme from '../theme/dracula.js';
+import request from '../control/api';
+
 
 const RightSection = ({ onSubmissionResponse }) => {
     const { quesName } = useParams();
@@ -60,7 +62,7 @@ const RightSection = ({ onSubmissionResponse }) => {
             lang: language
         };
 
-        axios.post('http://localhost:5000/submit', submissionData, { withCredentials: true })
+        request.post('/submit', submissionData, { withCredentials: true })
             .then(response => {
                 const { status, message} = response.data;
                 if(message==="Compilation error"){

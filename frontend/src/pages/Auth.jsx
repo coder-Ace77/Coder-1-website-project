@@ -5,7 +5,6 @@ import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
 import NavBar from "../components/nav_bar";
 
-
 const AuthPage = () => {
     return (
         <div>
