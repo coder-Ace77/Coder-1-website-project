@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import NavBar from '../components/nav_bar';
 import LeftSection from '../components/LeftSection';
 import RightSection from '../components/RightSection';
+import SubmissionSection from '../components/SubmissionSection';
 import '../css/Code.css';
 
 const Code = () => {
     const [activeSection, setActiveSection] = useState('description'); // Default active section
-
     const handleSectionChange = (section) => {
         setActiveSection(section);
     };
 
     const handleSubmissionResponse = (status) => {
-        if (status) {
+        if (status){
             setActiveSection('submission');
-        } else {
+        }else{
             setActiveSection('description');
         }
     };

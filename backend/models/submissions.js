@@ -6,6 +6,7 @@ const Submissions = new Schema({
     user:String,
     status:String,
     code:String,
+    message:String,
 });
 
 const submissions = mongoose.model('submissions', Submissions);

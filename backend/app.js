@@ -8,7 +8,7 @@ const cors = require("cors");
 const MongoDBStore = require("connect-mongodb-session")(session);
 require('dotenv').config();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const dbUrl = process.env.DATABASE_URL;
 
 const tags = require("./support/tags.js");
@@ -18,11 +18,13 @@ const { questions } = require("./models/question");
 const { constrainedMemory } = require("process");
 
 const app = express();
+console.log("HI");
 app.use(express.json());
 const store = new MongoDBStore({
-  uri: "mongodb+srv://Mohd_Adil:Mishrapur@onlineide.5fsk0pr.mongodb.net/ide",
+  uri: dbUrl,
   collection: "sessions",
 });
+
 
 app.use(
   session({
@@ -87,7 +89,6 @@ app.get("/gettaglist", (req, res) => {
 app.get("/questionlist", async (req, res) => {
   try {
     const result = (await questions.find({}, { name: 1, tags: 1, _id: 0 })).reverse();
-    // console.log("API HIT", result);
     res.json(result);
   }catch (error){
     console.error(error);

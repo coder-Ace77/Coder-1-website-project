@@ -18,6 +18,7 @@ exports.getSubmissionsController = (req, res) => {
         if (sub.length === 0) {
             return res.json({ status: false, message: "No submissions found" });
         }
+        console.log(sub);
         return res.json({ status: true, submissions: sub});
     })
     .catch(error => {

@@ -1,37 +1,38 @@
-// src/components/SubmissionSection.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 import axios from 'axios';
 import './css/SubmissionSection.css';
-import { useParams } from 'react-router-dom';
-import { CopyBlock , dracula } from 'react-code-blocks';
+import { CopyBlock, dracula } from 'react-code-blocks';
 
-const SubmissionSection = ({ques}) => {
+const SubmissionSection = forwardRef(({ ques }, ref) => {
     const [submissions, setSubmissions] = useState([]);
+    const [selectedSubmission, setSelectedSubmission] = useState(null); // Track which submission is clicked
+    const [isSideSectionOpen, setIsSideSectionOpen] = useState(false); // Control visibility of the side section
 
+    const fetchSubmissions = async () => {
+        try {
+            console.log(ques);
+            const url = `http://localhost:5000/submissions/${ques}`;
+            const response = await axios.get(url, { withCredentials: true });
+            if (response.data.status) {
+                setSubmissions(response.data.submissions.reverse());
+            }
+        } catch (error) {
+            console.error('Error fetching submissions:', error);
+        }
+    };
 
     useEffect(() => {
-        const fetchSubmissions = async () => {
-            try {
-                console.log(ques);
-                const url = `http://localhost:5000/submissions/${ques}`;
-                console.log(url);
-                const response = await axios.get(url, { withCredentials: true });
-                console.log(response.data);
-                if (response.data.status) {
-                    setSubmissions(response.data.submissions.reverse());
-                }
-            } catch (error) {
-                console.error('Error fetching submissions:', error);
-            }
-        };
-
         fetchSubmissions();
     }, [ques]);
 
-    const [expandedId, setExpandedId] = useState(null);
+    const handleViewSubmission = (submission) => {
+        setSelectedSubmission(submission);
+        setIsSideSectionOpen(true);
+    };
 
-    const toggleExpand = (id) => {
-        setExpandedId(expandedId === id ? null : id);
+    const handleCloseSideSection = () => {
+        setIsSideSectionOpen(false);
+        setSelectedSubmission(null);
     };
 
     return (
@@ -40,21 +41,34 @@ const SubmissionSection = ({ques}) => {
                 <div key={index} className="submission-card">
                     <div className="submission-header">
                         <span>Status: {submission.status}</span>
-                        <button onClick={() => toggleExpand(index)}>
-                            {expandedId === index ? 'Collapse' : 'Expand'}
+                        <button onClick={() => handleViewSubmission(submission)}>
+                            View Details
                         </button>
-                    </div>
-                    <div className={`submission-code ${expandedId === index ? 'expanded' : 'collapsed'}`}>
-                            <CopyBlock
-                                text={submission.code}
-                                language={'cpp'}
-                                showLineNumbers={true}
-                                theme={dracula}/>
                     </div>
                 </div>
             ))}
+
+            {isSideSectionOpen && (
+                <div className={`side-section ${isSideSectionOpen ? 'open' : ''}`}>
+                    <div className="side-section-content">
+                        <button className="close-button" onClick={handleCloseSideSection}>
+                            Close
+                        </button>
+                        <h2>{selectedSubmission.status}</h2>
+                        <p>{selectedSubmission.message}</p>
+                        {selectedSubmission && (
+                            <CopyBlock
+                                text={selectedSubmission.code}
+                                language={'cpp'}
+                                showLineNumbers={true}
+                                theme={dracula}
+                            />
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
-};
+});
 
 export default SubmissionSection;

@@ -2,6 +2,7 @@ const cp = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const exp = require("constants");
+const { stderr } = require("process");
 const execPromise = require("util").promisify(cp.exec);
 
 const check = (output, expectedOutput) => {
@@ -67,12 +68,13 @@ const main = async (code, question, id) => {
     let compileCommand = `g++ "${inputPath}" -o "${outputPath}"`;
 
     try {
-        const { stdout, stderr } = await execPromise(compileCommand);
+        const {stdout,stderr} = await execPromise(compileCommand);
     }
     catch (error) {
         return {
             status: false,
             message: "Compilation error",
+            verdict:stderr
         };
     }
 
@@ -92,17 +94,20 @@ const main = async (code, question, id) => {
         } else {
             let message;
             if (x === "TLE"){
-                message = `Time Limit Exceeded on test case ${i + 1}`;
+                message = `TLE ${i + 1}`;
+                verdict =  `Time limit exceeded on tst case ${i+1}`;
             } else {
-                message = `Test case failed`;
+                message = `Wrong ans`;
+                verdict =  `Wrong answer on test case ${i+1}`;
             }
             return {
                 status: false,
                 message: message,
+                verdict:verdict
             };
         }
         if (passed >= tot_cases) {
-            return {status:true, message: `All ${passed} test cases passed.`}
+            return {status:true, message: `Accepted` , verdict:`${passed}/${tot_cases} passed.`}
         }
     }
 }

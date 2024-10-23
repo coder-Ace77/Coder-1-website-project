@@ -53,7 +53,7 @@ exports.quesSubmitController = async (req, res) => {
       await updateUserSolvedQuestions(username, quesName);
     }
 
-    await saveSubmission(username, quesName, status.message, code);
+    await saveSubmission(username, quesName, status.message, code , status.verdict);
     return res.status(200).json({status:true,  message: status.message });
   } catch (err) {
     await saveSubmission(username, quesName, err.message, code);
@@ -72,12 +72,13 @@ async function updateUserSolvedQuestions(username, quesName) {
   await userData.save();
 }
 
-async function saveSubmission(username, name, status, code) {
+async function saveSubmission(username, name, status, code,message) {
   const sub = new submissions({
     user: username,
     name: name,
     status: status,
-    code: code
+    code: code,
+    message:message
   });
   await sub.save();
 }

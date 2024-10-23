@@ -62,13 +62,16 @@ const RightSection = ({ onSubmissionResponse }) => {
 
         axios.post('http://localhost:5000/submit', submissionData, { withCredentials: true })
             .then(response => {
-                const { status, message } = response.data;
-                console.log('Submission successful:', response.data);
-                setNotification({ show: true, message, isSuccess: status });
+                const { status, message} = response.data;
+                if(message==="Compilation error"){
+                    setNotification({show:true ,message , isSuccess:false});
+                }else{
+                    setNotification({ show: true, message, isSuccess: status });
+                }
                 onSubmissionResponse(status); 
                 setShowPopup(false); 
                 setTimeout(() => {
-                    setNotification({ show: false, message: '', isSuccess: false });
+                    setNotification({ show: false, message: '', isSuccess: false});
                 }, 5000);
             })
             .catch(error => {
