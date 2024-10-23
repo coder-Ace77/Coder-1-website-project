@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './css/ProblemDescription.css';
+import request from '../control/api';
+
 
 const ProblemDescription = () => {
     const { quesName } = useParams();
     const [questionDetail, setQuestionDetail] = useState(null);
     useEffect(() => {
-        axios.get(`http://localhost:5000/ques/${quesName}`)
+        request.get(`/ques/${quesName}`)
             .then(response => {
                 setQuestionDetail(response.data);
             })

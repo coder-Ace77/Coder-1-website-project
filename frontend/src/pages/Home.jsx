@@ -18,7 +18,6 @@ const HomePage = () => {
                     <button className="cta-button" onClick={handleGetStarted}>Get Started</button>
                 </div>
                 <div className="hero-animation">
-                    {/* Animation or Illustration here */}
                 </div>
             </section>
 

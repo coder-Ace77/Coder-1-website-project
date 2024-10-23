@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import request from '../control/api';
 
 const QuestionList = () => {
     const [questionList, setQuestionList] = useState([]);
@@ -7,7 +8,7 @@ const QuestionList = () => {
     const [selectedQuestion, setSelectedQuestion] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/getlist')
+        request.get('/getlist')
             .then(response => {
                 setQuestionList(response.data);
             })

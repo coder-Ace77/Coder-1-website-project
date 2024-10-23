@@ -1,13 +1,14 @@
 import Editor from '@monaco-editor/react';
 import { useState, useReducer, useRef } from 'react';
 import axios from 'axios';
+import request from "../control/api";
 
 const CodeEditor = (props) => {
     const [code, setCode] = useState('// Start coding here...');
     const SubmitHandler = (e) => {
         e.preventDefault();
         console.log(code);
-        axios.post('http://localhost:5000/subques', {
+        request.post('/subques', {
             "ques_name": "String",
             "code": code,
             "lang": "cpp",

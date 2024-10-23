@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './css/TagSearchComponent.css';
+import request from '../control/api';
 
 const TagSearchComponent = ({ selectedTags, onTagChange }) => {
     const [tags, setTags] = useState([]);
     const [selectedTag, setSelectedTag] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/gettaglist')
+        request.get('/gettaglist')
             .then(response => {
                 setTags(response.data.tags.tags);
             })

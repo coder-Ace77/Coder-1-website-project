@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import request from '../control/api'; // Use your custom Axios instance
 import '../css/QuestionList.css';
 import NavBar from '../components/nav_bar';
 import TagSearchComponent from '../components/TagSearchComponent';
@@ -12,7 +12,7 @@ const QuestionListPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/questionlist')
+        request.get('/questionlist')
             .then(response => {
                 setQuestions(response.data);
                 setFilteredQuestions(response.data);
@@ -24,12 +24,12 @@ const QuestionListPage = () => {
 
     const handleTagChange = (selectedTags) => {
         setTags(selectedTags);
-        filterQuestions(selectedTags); // Filter questions when tags change
+        filterQuestions(selectedTags);
     };
 
     const filterQuestions = (selectedTags) => {
         if (selectedTags.length === 0) {
-            setFilteredQuestions(questions); // Show all questions if no tags selected
+            setFilteredQuestions(questions);
         } else {
             const filtered = questions.filter(question =>
                 selectedTags.every(tag => question.tags.includes(tag))
@@ -40,7 +40,7 @@ const QuestionListPage = () => {
 
     const clearFilter = () => {
         setTags([]);
-        setFilteredQuestions(questions); // Reset filtered questions to all questions
+        setFilteredQuestions(questions);
     };
 
     const handleQuestionClick = (quesName) => {

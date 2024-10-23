@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import request from '../control/api'; 
 import '../css/Profile.css';
 import CustomList from '../components/CustomList';
 import NavBar from '../components/nav_bar';
@@ -17,10 +17,8 @@ const ProfilePage = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/checklogin', { withCredentials: true });
+                const response = await request.get('/checklogin', { withCredentials: true });
                 if (response.data.isLoggedIn) {
-                    console.log('User is logged in');
-                    console.log(response.data.user);
                     setUserData(response.data.user);
                     setSolvedQuestions(response.data.user.solved_ques.reverse());
                     const dailyLog = response.data.user.dailyLog.map(log => ({
@@ -44,15 +42,13 @@ const ProfilePage = () => {
 
         const fetchSubmissions = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/submissions', { withCredentials: true });
-                if (response.data.status){
-                    const arr = response.data.submissions.map((item) => {
-                        return {
-                            id: item._id,
-                            name: item.name,
-                            link: `/submission/view/${item._id}`    
-                        }
-                    }).reverse();
+                const response = await request.get('/submissions', { withCredentials: true });
+                if (response.data.status) {
+                    const arr = response.data.submissions.map((item) => ({
+                        id: item._id,
+                        name: item.name,
+                        link: `/submission/view/${item._id}`
+                    })).reverse();
                     setSubmissions(arr);
                 }
             } catch (error) {

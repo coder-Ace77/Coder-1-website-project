@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './css/AuthForm.css';
+import request from '../control/api';
+
 
 const SignupForm = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -21,7 +23,7 @@ const SignupForm = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/signin', userData);
+            const response = await request.post('/signin', userData);
             if (response.data.code === 350) {
                 setPopupMessage('Sign up successful!');
                 setPopupStatus('success');

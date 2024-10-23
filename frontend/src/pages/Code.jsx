@@ -6,7 +6,7 @@ import SubmissionSection from '../components/SubmissionSection';
 import '../css/Code.css';
 
 const Code = () => {
-    const [activeSection, setActiveSection] = useState('description'); // Default active section
+    const [activeSection, setActiveSection] = useState('description'); 
     const handleSectionChange = (section) => {
         setActiveSection(section);
     };
