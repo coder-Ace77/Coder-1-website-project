@@ -21,7 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 
-backend/codes
-backend/compiled_codes
+backend/codes/*
+backend/compiled_codes/*
 */node_modules
 .env
