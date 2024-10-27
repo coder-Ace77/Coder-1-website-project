@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh);
+}
+
+.main-container {
+    display: flex;
+    overflow: hidden;
+    height: 90vh;
+    padding-top: 10px;
+}
+
+.navbar-placeholder {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.section-content {
+    margin-top: 10px;
+}
+
+.right-section {
+    flex: 1;
+    background-color: #1e1e1e;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.left-section { /* Added left-section for completeness */
+    flex: 1;
+    background-color: #2c2c2c;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.monaco-editor {
+    height: max(50px, 80vh);
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.monaco-editor .editor {
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        height: auto; 
+    }
+
+    .home{
+        height: auto;
+    }
+
+    .right-section,
+    .left-section {
+        flex: none; 
+        padding: 10px;
+        margin-bottom: 30px;
+        max-height: 600px;
+        overflow-y: scroll;
+    }
+}

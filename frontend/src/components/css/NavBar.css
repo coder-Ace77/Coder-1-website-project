@@ -1,0 +1,182 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem; 
+    font-weight: bold;
+    flex: 1; 
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; 
+    flex: 1; 
+    align-items: center;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1.2rem; /* Improve font size */
+}
+
+/* Remove lines between options */
+.links a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.6rem;
+    height: 1.5rem;
+    width: 0; /* Set width to 0 to remove lines */
+    background-color: transparent; /* Make background transparent */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column; /* Stack username and logout vertically */
+    align-items: center;
+    gap: 0.5rem; /* Space between username and logout */
+}
+
+.username {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem; /* Improved font size */
+    font-weight: bold;
+}
+
+/* Logout button styling */
+.logout-button {
+    background-color: transparent; /* Remove red background */
+    color: white;
+    border: 1px solid white; /* Add border to differentiate */
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .list-item {
+        border-bottom: solid black;
+    }
+
+    .links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    .links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logout-button {
+        border-radius: 5px;
+        width: 150px;
+    }
+
+    .username {
+        font-weight: bold;
+        text-decoration: wavy;
+    }
+
+    /* Adjust order and visibility for small screens */
+    .links a,
+    .user-info .username,
+    .user-info .logout-button {
+        padding: 1rem;
+        text-align: center;
+        display: block;
+    }
+
+    /* Adjust the order of the links in open state */
+    .user-info .logout-button {
+        order: 0; /* Make logout button appear first */
+    }
+
+    .user-info .username {
+        order: 1; /* Username as second */
+    }
+
+    .links a[href='https://github.com/coder-Ace77?tab=repositories'] {
+        order: 2; /* GitHub as third */
+    }
+
+    .links a[href='/questionlist'] {
+        order: 3; /* Questions as fourth */
+    }
+
+    .links a[href='/add_question'] {
+        order: 4; /* Add Question as fifth */
+    }
+
+    /* Hide sign-in link on small screens when logged in */
+    .links a[href='/sign'] {
+        display: none;
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+    .links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center; /* Center-align the items on larger screens */
+    }
+
+    /* Keep order the same as before on large screens */
+    .user-info .username {
+        order: 1;
+    }
+
+    .links a[href='/sign'] {
+        display: inline-block;
+    }
+
+    .user-info {
+        flex-direction: row; /* Username and logout in the same row on large screens */
+        gap: 1rem;
+    }
+
+    .user-info .logout-button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+    }
+}

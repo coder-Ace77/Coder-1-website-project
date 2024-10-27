@@ -1,0 +1,100 @@
+
+
+.submission-card {
+    background: #4f4e4e;
+    color: #12b836;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.submission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.submission-header span {
+    font-weight: bold;
+}
+
+.submission-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submission-header button {
+    background-color: #0b9a6d;
+}
+
+.submission-header button:hover {
+    background-color: #195743;
+}
+
+.submission-code {
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+.submission-code.collapsed {
+    max-height: 100px;
+}
+
+.submission-code.expanded {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.submission-code pre {
+    background: #3a3a3a;
+    color: #f8f8f2;
+    border-radius: 5px;
+}
+
+.submission-section {
+    position: relative;
+}
+
+.side-section {
+    position: fixed;
+    z-index: 100;
+    bottom: -100%; /* Initially hidden */
+    left: 0;
+    width: 50%;
+    height: 70%; /* Adjust the height as needed */
+    background-color: #282a36;
+    overflow-y: scroll;
+    color: white;
+    transition: bottom 0.5s ease-in-out;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width:768px) {
+    .side-section{
+        width: 100%;
+    }
+}
+
+.side-section.open {
+    bottom: 0;
+}
+
+.side-section-content {
+    padding: 20px;
+}
+
+.close-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    margin-top: -10px;
+}
