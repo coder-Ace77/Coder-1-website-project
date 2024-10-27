@@ -132,10 +132,6 @@ To run this project locally, ensure you have **Node.js** and **Docker** installe
 
 ---
 
-## 🤝 Contributing
-
-🌟 We welcome contributions! To contribute to Coding Master, please fork the repository, create a new branch, and submit a pull request with a description of your changes. For any questions or issues, feel free to open a new issue in the repository.
-
 <div align="center">
 
 **💫 Thank you for checking out Coding Master! We look forward to seeing your contributions and feedback. 💫**
